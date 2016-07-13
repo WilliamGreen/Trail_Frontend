@@ -1,0 +1,16 @@
+<ion-view view-title="Write a Thought">
+
+  <ion-content class="padding-horizontal padding">
+
+  <form name="form" class="padding">
+      <label class="item item-input item-stacked-label cornerRadius">
+              <textarea name="postTextarea" required ng-model="postText.value" ng-trim="false" class="lightText lightBorder largeText cornerRadius"
+                   placeholder=" What's on your mind?" rows="6" cols="10" maxlength="180">
+              </textarea>
+      </label>
+  </form>
+
+    <button id="makePostButton" class="button button-block button-calm" ng-disabled="!form.$valid" ng-click="makePost()">Post</button>
+
+  </ion-content>
+</ion-view>

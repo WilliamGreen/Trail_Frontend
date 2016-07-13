@@ -1,0 +1,44 @@
+<ion-view view-title="Register">
+  <ion-content class="padding-top">
+   <br>
+   <br>
+    <div class="list text-center padding">
+      <i class="icon ion-ios-personadd-outline larger positive"></i>
+    </div>
+    <br>
+    <br>
+    <form name="registerForm" novalidate ng-submit="registerForm.$valid && register(user)"
+    ng-class="{ 'has-error' : registerForm.txtemail.$invalid && registerForm.$submitted }">
+    <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">.ac.uk Email</span>
+        <input name="txtemail" type="email" ng-model="user.email" placeholder=".ac.uk Email"
+        ng-minlength="5"
+        ng-maxlength="30"
+        required>
+      </label>
+      <div class="form-errors" ng-messages="registerForm.txtemail.$error" ng-if="registerForm.$submitted">
+        <div class="form-error" ng-message="required">This field is required.</div>
+        <div class="form-error" ng-message="email">This field must be an email.</div>
+        <div class="form-error" ng-message="maxlength">The email you entered is invalid.</div>
+      </div>
+        <label class="item item-input item-floating-label" ng-class="{ 'has-error-lr' : registerForm.txtpassword.$invalid  && registerForm.$submitted}">
+        <span class="input-label">Password</span>
+        <input name="txtpassword" type="password" ng-model="user.password" placeholder="Password"
+        ng-minlength="5"
+        ng-maxlength="25"
+        required>
+      </label>
+      <div class="form-errors" ng-messages="registerForm.txtpassword.$error" ng-if="registerForm.$submitted">
+        <div class="form-error" ng-message="required">This field is required.</div>
+        <div class="form-error" ng-message="minlength">This field must be at least 5 characters.</div>
+        <div class="form-error" ng-message="maxlength">This field must be less than 30 characters.</div>
+        <div class="form-error" ng-message="pattern">You password cannot be a sequence or pattern.</div>
+      </div>
+    </div>
+    <div class="padding-top">
+      <input type="submit" value="Register" class="button button-block button-positive"/>
+    </div>
+  </form>
+  </ion-content>
+</ion-view>
