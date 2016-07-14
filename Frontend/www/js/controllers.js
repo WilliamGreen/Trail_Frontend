@@ -48,7 +48,7 @@ angular.module('starter.controllers', [])
 
           if (location == null || location == undefined ) return ;
 
-           $http.post("http://localhost:3000/getPosts",
+           $http.post("https://trailbackend.herokuapp.com/getPosts",
               { params: { "latitude": location[0], "longitude": location[1] }})
                 .success(function(response) {
 
@@ -100,7 +100,7 @@ angular.module('starter.controllers', [])
     var arrayPosition = IonicService.getPosition();
     var encodedData= encodeURI($scope.postText.value);
 
-     $http.post("http://localhost:3000/makePost", { params:
+     $http.post("https://trailbackend.herokuapp.com/makePost", { params:
               { "content": encodedData,
                  "latitude" : arrayPosition[0],
                  "longitude": arrayPosition[1],
