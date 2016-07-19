@@ -1,12 +1,12 @@
-<ion-view view-title="Yik Yaks" name="tab-dash">
+<ion-view view-title="Portsmouth University" name="tab-dash">
 
     <ion-content>
 
       <ion-spinner class="centerDiv" ng-show="showLoading" icon="lines"></ion-spinner>
 
-      <div class="padding centerDiv" ng-show="noPosts"><p class="padding">No active posts in your area.</p></div>
+      <div class="padding centerDiv" ng-show="noPosts"><p class="padding">Nobody's left anything here yet...</p></div>
 
-      <ion-refresher pulling-text="Load new stuffs" on-refresh="doRefresh()"></ion-refresher>
+      <ion-refresher pulling-text="Refresh" on-refresh="doRefresh()"></ion-refresher>
 
        <ion-list>
 
